@@ -1,0 +1,88 @@
+{
+    "layer": "top",
+    "position": "left",
+    "width": 20,
+
+    "modules-left": [
+        "hyprland/workspaces",
+        "custom/media"
+    ],
+    "modules-center": [
+    ],
+    "modules-right": [
+        "tray",
+        "network",
+        "battery",
+        "clock",
+        "custom/power"
+    ],
+
+    "hyprland/workspaces": {
+        "on-scroll-up": "hyprctl dispatch 'hl.dsp.focus({ workspace = \"-1\" })'",
+        "on-scroll-down": "hyprctl dispatch 'hl.dsp.focus({ workspace = \"+1\" })'",
+        "smooth-scrolling-threshold": 8
+    },
+
+    "custom/media": {
+        "exec": "/home/bielimmeral/.config/hypr/scripts/media.sh",
+        "return-type": "json"
+    },
+
+    "tray": {
+        "spacing": 10
+    },
+
+    "cpu": {
+        "format": "{usage}% ",
+        "tooltip": false
+    },
+
+    "memory": {
+        "format": "{}% "
+    },
+
+    "network": {
+        "format-wifi": " {signalStrength}%",
+	"format-icons": ["", "", "", "", ""],
+        "format-disconnected": " ⚠",
+        "tooltip-format": "{ifname} via {gwaddr} ",
+	"on-click": "~/.config/hypr/scripts/wifi-menu.sh"
+    },
+
+    "pulseaudio": {
+        "format": "{volume}% {icon}",
+        "format-muted": " ",
+        "format-icons": {
+            "default": ["", "", ""]
+        },
+        "on-click": "pavucontrol"
+    },
+
+    "battery": {
+        "states": {
+            "warning": 30,
+            "critical": 15
+        },
+        "format": "{icon} {capacity}%",
+        "format-charging": "{capacity}% ",
+        "format-icons": ["", "", "", "", ""]
+    },
+
+    "clock": {
+        "format": "{:%H\n%M}",
+        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
+    },
+
+    "custom/power": {
+        "format": "⏻",
+        "tooltip": false,
+        "menu": "on-click",
+        "menu-file": "$HOME/.config/waybar/power_menu.xml",
+        "menu-actions": {
+            "shutdown": "shutdown",
+            "reboot": "reboot",
+            "suspend": "systemctl suspend",
+	    "hibernate": "systemctl hibernate"
+        }
+    }
+}

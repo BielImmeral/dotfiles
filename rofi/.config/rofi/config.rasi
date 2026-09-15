@@ -1,0 +1,40 @@
+* {
+	text-color: #ff8478;
+}
+
+configuration {
+	modes: "drun";
+	show-icons: true;
+}
+
+
+window {
+	background-color: #0d0d0dee;
+	border: 2px;
+	border-color: #960018;
+	border-radius: 8px;
+}
+
+entry {
+	text-color: #ff8478;
+	placeholder: "Immeral Search";
+}
+
+listview {
+	
+}
+
+element normal.normal {
+	background-color: #3c0000;
+	text-color: #ff8478;
+}
+
+element alternate.normal {
+        background-color: #3c0000;
+	text-color: #ff8478;
+}
+
+element selected.normal {
+	background-color: #ff8478;
+	text-color: #3c0000;
+}
