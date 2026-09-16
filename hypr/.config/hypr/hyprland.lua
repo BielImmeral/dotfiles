@@ -69,6 +69,7 @@ hl.on("hyprland.start", function ()
 	hl.exec_cmd("swaync")
 	hl.exec_cmd("wl-paste --watch cliphist store")
 	hl.exec_cmd("/usr/libexec/polkit-kde-authentication-agent-1")
+	hl.exec_cmd("kitty --hold fastfetch")
 end)
 
 
