@@ -4,43 +4,52 @@
     "height": 30,
 
     "modules-left": [
+	"custom/menu",
         "hyprland/workspaces",
         "custom/media"
     ],
     "modules-center": [
+	"hyprland/window"
     ],
     "modules-right": [
-        "tray",
+
+	"cpu",
+	"memory",
+	"disk",
+
+        "custom/bluetooth",
+	"network",
 	"pulseaudio",
-        "network",
-        "battery",
-        "clock",
-        "custom/power",
-	"custom/bluetooth"
+	
+	"battery",
+	"clock",
+	"custom/power"
     ],
     "hyprland/window": {
-	"max-lenght": 30
+	"format": "{title}",
+	"icon": true,
+	"max-length": 30
     },
 
     "hyprland/workspaces": {
-        "on-scroll-up": "hyprctl dispatch 'hl.dsp.focus({ workspace = \"-1\" })'",
-        "on-scroll-down": "hyprctl dispatch 'hl.dsp.focus({ workspace = \"+1\" })'",
-        "smooth-scrolling-threshold": 8
+        "on-scroll-left": "hyprctl dispatch 'hl.dsp.focus({ workspace = \"-1\" })'",
+        "on-scroll-right": "hyprctl dispatch 'hl.dsp.focus({ workspace = \"+1\" })'",
+        "smooth-scrolling-threshold": 15
     },
 
     "custom/bluetooth": {
-	"format": "{}",
+	"format": " {} ",
 	"exec": "~/.config/hypr/scripts/waybar-bluetooth.sh",
 	"interval": 2,
 	"on-click": "~/.config/hypr/scripts/bluetooth.sh",
 	"return-type": "json"
     },
 
-//    "custom/media": {
-//        "exec": "/home/bielimmeral/.config/hypr/scripts/media.sh",
-//        "return-type": "json",
-//        "interval": 2
-//    },
+    "custom/media": {
+        "exec": "/home/bielimmeral/.config/hypr/scripts/media.sh",
+        "return-type": "json",
+        "interval": 2
+    },
 
     "tray": {
 	"icon-size": 16,
@@ -48,31 +57,37 @@
     },
 
     "cpu": {
-        "format": "{usage}% ",
+        "format": " {usage}%",
         "tooltip": false
     },
 
     "memory": {
-        "format": "{}% "
+        "format": "󰘚 {}%"
+    },
+
+    "disk": {
+	"format": " {percentage_used}%"
     },
 
     "network": {
-        "format-wifi": " {signalStrength}%",
+        "format-wifi": "  ",
 	"format-icons": ["", "", "", "", ""],
-        "format-disconnected": " ⚠",
+        "format-disconnected": " ⚠ ",
         "tooltip-format": "{ifname} via {gwaddr} ",
 	"on-click": "~/.config/hypr/scripts/wifi-menu.sh"
     },
 
     "pulseaudio": {
         "scroll-step": 1,
-        "format": "{icon} {volume}%",
+	"reverse-scrolling": true,
+	"max-volume": 500,
+        "format": " {volume}% ",
         "format-muted": " {format_source}",
         "format-source-muted": "",
         "format-icons": {
             "headphone": "",
             "hands-free": "",
-            "headset": "",
+            "headset": "󰥰",
             "phone": "",
             "portable": "",
             "car": "",
@@ -87,7 +102,7 @@
             "critical": 15
         },
         "format": "{icon} {capacity}%",
-        "format-charging": "{capacity}% ",
+        "format-charging": "󰂄 {capacity}% ",
         "format-icons": ["", "", "", "", ""]
     },
 
@@ -97,8 +112,14 @@
     },
 
     "custom/power": {
-        "format": "⏻",
+        "format": " ⏻ ",
         "tooltip": false,
         "on-click": ".config/hypr/scripts/powermenu.sh"
+    },
+
+    "custom/menu": {
+	"format": " 󱑷 ",
+	"tootltip": false,
+	"on-click": "swaync-client -t -sw"
     }
 }

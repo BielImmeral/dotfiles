@@ -41,6 +41,11 @@ window#waybar {
 	background-color: #960018;
 }
 
+#window {
+	color: #ff8478
+}
+
+#custom-menu,
 #custom-media, 
 #cpu, 
 #memory, 
@@ -49,18 +54,91 @@ window#waybar {
 #battery, 
 #clock, 
 #tray, 
-#custom-power { 
-	margin: 0px 6px; 
-	padding: 8px 4px; 
+#cpu,
+#memory,
+#disk,
+#custom-power,
+#custom-bluetooth { 
+	margin: 5px 6px; 
+	padding: 0px 6px; 
 	background-color: rgba(25, 0, 0, 0.6); 
 	color: #ff8478; 
 	border-radius: 25px;
 	min-height: 0; 
 } 
 
-#custom-power { 
+
+/* MENU */
+
+#custom-menu {
+	margin: 0px 10px; 
+	padding: 0px 5px; 
+	background-color: transparent; 
 	color: #ff8478; 
-	background-color: #3c0000;
+	border-radius: 25px;
+	min-height: 0; 
+	font-size: 30px;
+}
+
+
+/* PROCESSADOR, MEMÓRIA e ARMAZENAMENTO */
+
+#cpu,
+#memory,
+#disk  {
+	color: #ff8478;
+	padding: 8px 0px;  
+	background-color: transparent;
 	min-height: 0;
+}
+#cpu {color: #964444}
+#memory {color: #446d96}
+#disk {color: #388f55}
+
+
+
+
+
+/* BLUETOOTH, WIFI e VOLUME */
+
+#custom-bluetooth,
+#network,
+#pulseaudio  {
+	color: #ff8478;
+	margin: 5px 0px;
+	padding: 0px 5px;  
+	background-color: rgba(90, 0, 0, 0.6);
+	min-height: 0;
+	border-radius: 0px 25px 25px 0px;
+}
+
+#custom-bluetooth {
+	color: #ff8478; 
+	border-radius: 25px 0px 0px 25px;
+	font-size: 13px}
+
+#network {
+	color: #ff8478; 
+	border-radius: 0px; 
+	font-size: 20px}
+
+#pulseaudio {
+	color: #ff8478; 
+	border-radius: 0px 25px 25px 0px}
+
+
+
+
+/* BATERIA, RELÓGIO E DESLIGAR */
+
+#baterry,
+#clock,
+#custom-power {
+	margin: 5px 5px; 
+	padding: 0px 5px; 
+	background-color: rgba(25, 0, 0, 0.6); 
+	color: #ff8478; 
+	border-radius: 25px;
+	min-height: 0; 
 }
 
