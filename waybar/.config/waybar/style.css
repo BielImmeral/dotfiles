@@ -1,29 +1,45 @@
 @import "colors.css"; 
 
 * { 
+	border: none;
 	font-family: "JetBrainsMono Nerd Font Mono", sans-serif; 
-	font-size: 13px; 
+	font-size: 12px; 
+	min-height: 0px;
+	margin: 0px;
+	padding: 0px;
 } 
 
 window#waybar { 
-	background-color: @surface; 
-	border-right: 2px solid #3c0000; 
+	background-color: rgba(30, 0, 0, 0.7); 
+	border-right: 0px solid #3c0000;
+	border-radius: 25px;
+	margin-top: 10px;  
 } 
 
 #workspaces { 
-	margin: 12px 0; 
+	margin: 2px 0; 
+	border-radius: 25px;
+	min-height: 0;
 } 
 
 #workspaces button { 
-	padding: 8px 0; 
-	margin: 4px 6px; 
+	background-size: 10px 10px;
+	padding: 10px 10px; 
+	margin: 0px 0px; 
 	background-color: transparent; 
-	color: #ffffff; border-radius: 8px; 
+	color: #ff8478;  
+	border-radius: 25px; 
+	min-height: 0;
 } 
 
 #workspaces button.active { 
-background-color: #960018; 
+	background-color: rgba(25, 0, 0, 0.8); 
 } 
+
+
+#workspaces button:hover {
+	background-color: #960018;
+}
 
 #custom-media, 
 #cpu, 
@@ -34,15 +50,17 @@ background-color: #960018;
 #clock, 
 #tray, 
 #custom-power { 
-	margin: 10px 6px; 
+	margin: 0px 6px; 
 	padding: 8px 4px; 
-	background-color: #3c0000; 
+	background-color: rgba(25, 0, 0, 0.6); 
 	color: #ff8478; 
-	border-radius: 10px; 
+	border-radius: 25px;
+	min-height: 0; 
 } 
 
 #custom-power { 
 	color: #ff8478; 
-	background-color: #3c0000; 
+	background-color: #3c0000;
+	min-height: 0;
 }
 

@@ -1,7 +1,7 @@
 {
     "layer": "top",
-    "position": "left",
-    "width": 5,
+    "position": "top",
+    "height": 30,
 
     "modules-left": [
         "hyprland/workspaces",
@@ -18,6 +18,9 @@
         "custom/power",
 	"custom/bluetooth"
     ],
+    "hyprland/window": {
+	"max-lenght": 30
+    },
 
     "hyprland/workspaces": {
         "on-scroll-up": "hyprctl dispatch 'hl.dsp.focus({ workspace = \"-1\" })'",
@@ -40,7 +43,8 @@
 //    },
 
     "tray": {
-        "spacing": 10
+	"icon-size": 16,
+        "spacing": 0
     },
 
     "cpu": {
@@ -61,7 +65,7 @@
     },
 
     "pulseaudio": {
-        // "scroll-step": 1, // %, can be a float
+        "scroll-step": 1,
         "format": "{icon} {volume}%",
         "format-muted": " {format_source}",
         "format-source-muted": "",
@@ -88,20 +92,13 @@
     },
 
     "clock": {
-        "format": "{:%H\n%M}",
+        "format": "{:%H:%M}",
         "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
     },
 
     "custom/power": {
         "format": "⏻",
         "tooltip": false,
-        "menu": "on-click",
-        "menu-file": "$HOME/.config/waybar/power_menu.xml",
-        "menu-actions": {
-            "shutdown": "shutdown",
-            "reboot": "reboot",
-            "suspend": "systemctl suspend",
-	    "hibernate": "systemctl hibernate"
-        }
+        "on-click": ".config/hypr/scripts/powermenu.sh"
     }
 }

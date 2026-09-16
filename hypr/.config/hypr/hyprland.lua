@@ -192,7 +192,7 @@ hl.animation({ leaf = "layersOut", enabled = true, speed = 0.5, bezier = "menu_d
 hl.animation({ leaf = "fadeLayersIn", enabled = true, speed = 5, bezier = "menu_decel" })
 hl.animation({ leaf = "fadeLayersOut", enabled = true, speed = 4, bezier = "menu_decel" })
 
-hl.animation({ leaf = "workspaces", enabled = true, speed = 8, bezier = "overshot", style = "slidevert" })
+hl.animation({ leaf = "workspaces", enabled = true, speed = 8, bezier = "overshot", style = "slide" })
 hl.animation({ leaf = "specialWorkspace", enabled = true, speed = 8, bezier = "overshot", style = "slide" })
 
 
@@ -222,7 +222,7 @@ hl.config({
 
 hl.gesture({
     fingers = 3,
-    direction = "vertical",
+    direction = "horizontal",
     action = "workspace"
 })
 
